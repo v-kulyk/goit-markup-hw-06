@@ -663,6 +663,11 @@ address {
   background: var(--cloud);
   padding: 96px 0;
 }
+@media screen and (min-width: 1158px) {
+  .section-our-team {
+    padding: 120px 0;
+  }
+}
 
 .section-our-team .cards-list {
   display: flex;
@@ -716,20 +721,99 @@ address {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: var(--transition);
+  transition-property: background;
 }
 
-.section-our-team .card-link {
+.section-our-team .card-socials-link:hover {
+  background: var(--ocean);
 }
+
 /* #endregion OurTeam */
 
-.cards-item-socials {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 8px;
+/* #region Customers */
+.section-customers {
+  padding: 96px 0;
+}
+@media screen and (min-width: 1158px) {
+  .section-customers {
+    padding: 120px 0;
+  }
+}
+.section-customers .section-customers-title {
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--navy-blue);
+  margin-bottom: 72px;
 }
 
-.cards-item-socials-link,
+.section-customers .customers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 72px 16px;
+}
+@media screen and (min-width: 768px) {
+  .section-customers .customers-list {
+    gap: 72px 24px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .section-customers .customers-list {
+    gap: 24px;
+    flex-wrap: nowrap;
+  }
+}
+
+.section-customers .customers-item {
+  width: calc((100% - 48px) / 2);
+}
+@media screen and (min-width: 768px) {
+  .section-customers .customers-item {
+    width: calc((100% - 64px) / 4);
+  }
+}
+@media screen and (min-width: 1158px) {
+  .section-customers .customers-item {
+    width: 168px;
+  }
+}
+
+.section-customers .customers-item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 42px;
+  border: 1px solid var(--light-slate);
+  border-radius: 4px;
+  transition: var(--transition);
+  transition-property: color;
+}
+@media screen and (min-width: 768px) {
+  .section-customers .customers-item-link {
+    padding: 12px 31px;
+  }
+}
+
+.section-customers .customers-item-link:hover {
+  border-color: var(--iris);
+}
+.section-customers .customers-item-icon {
+  fill: var(--light-slate);
+}
+
+.section-customers .customers-item-icon {
+  transition: var(--transition);
+  transition-property: fill;
+}
+
+.section-customers .customers-item-link:hover .customers-item-icon {
+  fill: var(--iris);
+}
+/* #endregion Customers */
+
 .footer-socials-link {
   display: flex;
   justify-content: center;
@@ -749,74 +833,10 @@ address {
   background: var(--ocean);
 }
 
-/* .cards-item.col-4 {
-  flex-basis: calc((100% - 48px) / 3);
-}
-@media screen and (min-width: 768px) {
-  .cards-item.col-4 {
-    flex-basis: calc((100% - 48px) / 2);
-  }
-}
-
-.cards-item.col-3 {
-  flex-basis: calc((100% - 48px) / 4);
-} */
-
-/* .cards-item:last-child {
-  margin-bottom: 0;
-} */
-/* @media screen and (min-width: 1158px) {
-  .cards-item:last-child {
-    margin-right: 0;
-  }
-} */
-
 .text-center {
   text-align: center;
 }
 
-.section-customers {
-  padding: 120px 0;
-}
-.section-customers .section-customers-title {
-  /* font-family: var(--font-family); */
-  /* font-weight: 700; */
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  text-transform: capitalize;
-  text-align: center;
-  color: var(--navy-blue);
-  margin-bottom: 72px;
-}
-.customers-list {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-.customers-list .customers-item-link {
-  display: block;
-  padding: 16px 32px;
-  border: 1px solid var(--light-slate);
-  border-radius: 4px;
-  transition: var(--transition);
-  transition-property: color;
-}
-.customers-list .customers-item-link:hover {
-  border-color: var(--iris);
-}
-.customers-item-icon {
-  fill: var(--light-slate);
-}
-
-.customers-list .customers-item-link .customers-item-icon {
-  transition: var(--transition);
-  transition-property: fill;
-}
-
-.customers-item-link:hover .customers-item-icon {
-  fill: var(--iris);
-}
 /* #endregion Home */
 
 /* #region Portfolio */
