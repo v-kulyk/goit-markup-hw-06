@@ -651,6 +651,23 @@ address {
 
 /* #endregion AboutUs */
 
+/* #region OurWork */
+.section.section-our-work {
+  display: none;
+}
+@media screen and (min-width: 1158px) {
+  .section.section-our-work {
+    display: block;
+  }
+}
+.section.section-our-work .cards-list {
+  display: flex;
+  gap: 24px;
+}
+.section.section-our-work .card {
+}
+/* #endregion OurWork */
+
 .cards-item-socials {
   display: flex;
   justify-content: center;
