@@ -77,17 +77,33 @@ address {
   overflow: hidden;
 }
 
+.hide {
+  display: none;
+}
+
 .container {
-  max-width: var(--container-width);
+  max-width: 100%;
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: var(--container-width);
+    max-width: var(--container-width);
+    width: 100%;
+    max-width: var(--container-width);
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .socials-icon {
   fill: var(--cloud);
 }
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -164,8 +180,14 @@ address {
 
 .header .container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+  min-height: 70px;
+}
+@media screen and (min-width: 1158px) {
+  .header .container {
+    align-items: baseline;
+  }
 }
 
 .logo-dark {
@@ -185,17 +207,53 @@ address {
   display: flex;
 }
 
-.header .logo {
-  margin-right: 76px;
+.contact-links {
+  flex-direction: column;
+  gap: 12px;
 }
 
-.header .header-nav {
-  flex-grow: 1;
+@media screen and (min-width: 1158px) {
+  .contact-links {
+    flex-direction: row;
+    gap: 0;
+  }
 }
 
-.nav-list > li,
-.contact-links > li {
-  margin-right: 40px;
+@media screen and (min-width: 1158px) {
+  .header .logo {
+    margin-right: 76px;
+  }
+}
+
+.header .header-nav,
+.header .contacts {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header .header-nav {
+    display: flex;
+  }
+  .header .contacts {
+    display: block;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .header .header-nav {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list > li {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .contact-links > li {
+    margin-right: 40px;
+  }
 }
 
 .nav-list > li:last-child,
@@ -211,6 +269,11 @@ address {
   position: relative;
   transition: var(--transition);
   transition-property: color;
+}
+@media screen and (min-width: 1158px) {
+  .nav-list-link {
+    padding: 24px 0;
+  }
 }
 
 .nav-list-link.active,
@@ -236,9 +299,20 @@ address {
 .contact-link {
   color: var(--slate);
   display: inline-block;
-  padding: 24px 0;
   transition: var(--transition);
   transition-property: color;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+@media screen and (min-width: 1158px) {
+  .contact-link {
+    padding: 24px 0;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
 }
 
 .nav-list-link:hover,
@@ -829,3 +903,93 @@ input[type="checkbox"].form-checkbox:checked
 }
 /* #endregion Modal */
 
+/* #region MobileMenu */
+.menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+}
+
+.menu .link {
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu .link:hover,
+.menu .link:focus {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: #3f51b5;
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+}
+
+.mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu .link {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+/* #endregion MobileMenu */
