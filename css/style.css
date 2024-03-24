@@ -83,6 +83,7 @@ address {
 
 .container {
   max-width: 100%;
+  min-width: 320px;
   width: 100%;
   padding-left: 16px;
   padding-right: 16px;
@@ -900,17 +901,34 @@ address {
 
 /* #region Portfolio */
 .section.section-portfolio {
-  padding-top: 96px;
+  padding-top: 48px;
+}
+@media screen and (min-width: 1158px) {
+  .section.section-portfolio {
+    padding-top: 96px;
+  }
 }
 
 .filter {
   display: flex;
-  justify-content: center;
-  margin-bottom: 72px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  gap: 16px 24px;
+}
+@media screen and (min-width: 768px) {
+  .filter {
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .filter {
+    margin-bottom: 72px;
+  }
 }
 
 .filter .filter-item {
-  margin-right: 24px;
+  /* margin-right: 24px; */
 }
 
 .filter .filter-item:last-child {
@@ -947,26 +965,47 @@ address {
 }
 
 .services-list {
-  flex-wrap: wrap;
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .services-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    align-items: normal;
+  }
+}
+@media screen and (min-width: 1158px) {
 }
 
 .services-list .cards-item {
-  margin-bottom: 48px;
 }
 
 .services-list .cards-item:nth-last-child(1),
 .services-list .cards-item:nth-last-child(2),
 .services-list .cards-item:nth-last-child(3) {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 
 .services-list .cards-item:nth-child(3n) {
-  margin-right: 0;
+  /* margin-right: 0; */
+}
+
+.services-list .services-item-link {
 }
 
 .services-list .cards-item img {
-  max-width: 100%;
+  width: 396px;
 }
+@media screen and (min-width: 768px) {
+  .services-list .cards-item img {
+    width: 356px;
+  }
+}
+
 .services-list > .cards-item {
   box-shadow: none;
   transition: var(--transition);
@@ -997,6 +1036,13 @@ address {
 
 .services-list .cards-item:hover .overlay {
   transform: translateY(0);
+}
+
+.services-list .cards-item-details {
+  /* margin-top: 32px; */
+  padding: 32px 16px;
+  border: 1px solid var(--cornflower);
+  border-top: none;
 }
 
 .services-item-title {
