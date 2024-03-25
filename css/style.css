@@ -82,23 +82,27 @@ address {
 }
 
 .container {
-  max-width: 100%;
-  min-width: 320px;
-  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
+}
+@media screen and (min-width: 428px) {
+  .container {
+    max-width: 428px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
 @media screen and (min-width: 1158px) {
   .container {
     max-width: var(--container-width);
-    max-width: var(--container-width);
-    width: 100%;
-    max-width: var(--container-width);
-    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 .socials-icon {
@@ -126,7 +130,8 @@ address {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
+  width: calc(100% - 36px);
+  max-width: 408px;
   min-height: 576px;
   background-color: var(--dairy);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -783,13 +788,18 @@ address {
 }
 
 .section-our-team .card-title {
-  text-align: center;
   margin-bottom: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--navy-blue);
 }
 
 .section-our-team .card-description {
   text-align: center;
   margin-bottom: 8px;
+  color: var(--slate);
 }
 
 .section-our-team .card-socials {
@@ -870,7 +880,7 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 42px;
+  padding: 12px 7px;
   border: 1px solid var(--light-slate);
   border-radius: 4px;
   transition: var(--transition);
